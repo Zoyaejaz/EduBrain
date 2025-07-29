@@ -1,0 +1,123 @@
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Navbar from "./component/Navbar";
+import Login from "./component/Login";
+import Signup from "./component/Signup";
+import Password from "./component/Password";
+import OTP from "./component/Otp";
+import Forget from "./component/Forget";
+import Footer from "./component/Footer";
+import FAQSection from "./component/Faq";
+import TestimonialsSection from "./component/Testimonial";
+import EduBrainingHero from "./component/Hero";
+import TechJourneyCTA from "./component/Next";
+import InternshipOpportunities from "./component/Internship";
+import CertificationAchievement from "./component/Helps";
+import SuccessPathInfographic from "./component/process";
+import TechCoursesSection from "./component/Tech";
+import EdubrainingWelcomeSection from "./component/Welcome";
+
+export default function App() {
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showOTP, setShowOTP] = useState(false);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+
+  const handleLoginClick = () => {
+    setShowSignup(false);
+    setShowLogin(true);
+  };
+
+  const handleSignupClick = () => {
+    setShowLogin(false);
+    setShowSignup(true);
+  };
+
+  return (
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Navbar onLoginClick={handleLoginClick} />
+
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<EduBrainingHero />} />
+          </Routes>
+
+          {showLogin && (
+            <Login
+              onClose={() => setShowLogin(false)}
+              onSignupClick={handleSignupClick}
+              onForgotPassword={() => {
+                setShowLogin(false);
+                setShowForgotPassword(true);
+              }}
+            />
+          )}
+
+          {showSignup && (
+            <Signup
+              onClose={() => setShowSignup(false)}
+              onLoginClick={handleLoginClick}
+              onContinue={() => {
+                setShowSignup(false);
+                setShowPassword(true);
+              }}
+            />
+          )}
+
+          {showPassword && (
+            <Password
+              onClose={() => setShowPassword(false)}
+              onGoBack={() => {
+                setShowPassword(false);
+                setShowSignup(true);
+              }}
+              onContinue={() => {
+                setShowPassword(false);
+                setShowOTP(true);
+              }}
+            />
+          )}
+
+          {showOTP && (
+            <OTP
+              onClose={() => setShowOTP(false)}
+              onGoBack={() => {
+                setShowOTP(false);
+                setShowForgotPassword(true);
+              }}
+              onContinue={() => {
+                setShowOTP(false);
+              }}
+            />
+          )}
+
+          {showForgotPassword && (
+            <Forget
+              onClose={() => setShowForgotPassword(false)}
+              onLoginClick={() => {
+                setShowForgotPassword(false);
+                setShowLogin(true);
+              }}
+              onContinue={() => {
+                setShowForgotPassword(false);
+                setShowOTP(true);
+              }}
+            />
+          )}
+        </main>
+        <EdubrainingWelcomeSection />
+        <TechCoursesSection />
+        <SuccessPathInfographic />
+        <CertificationAchievement />
+        <InternshipOpportunities />
+        <TestimonialsSection />
+        <TechJourneyCTA />
+        <FAQSection />
+        <Footer />
+      </div>
+    </Router>
+  );
+}
