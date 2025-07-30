@@ -17,6 +17,8 @@ import CertificationAchievement from "./component/Helps";
 import SuccessPathInfographic from "./component/process";
 import TechCoursesSection from "./component/Tech";
 import EdubrainingWelcomeSection from "./component/Welcome";
+import ForgetOTP from "./component/Forgetotp";
+import Reset from "./component/Resetpass";
 
 export default function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -24,6 +26,8 @@ export default function App() {
   const [showPassword, setShowPassword] = useState(false);
   const [showOTP, setShowOTP] = useState(false);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [showForgetotp, setShowForgetotp] = useState(false); // ✅ Added
+  const [showResetPassword, setShowResetPassword] = useState(false); // ✅ Added
 
   const handleLoginClick = () => {
     setShowSignup(false);
@@ -62,7 +66,7 @@ export default function App() {
               onLoginClick={handleLoginClick}
               onContinue={() => {
                 setShowSignup(false);
-                setShowPassword(true);
+                setShowOTP(true);
               }}
             />
           )}
@@ -72,11 +76,11 @@ export default function App() {
               onClose={() => setShowPassword(false)}
               onGoBack={() => {
                 setShowPassword(false);
-                setShowSignup(true);
+                setShowOTP(true);
               }}
               onContinue={() => {
                 setShowPassword(false);
-                setShowOTP(true);
+                // Possibly navigate to dashboard or show login
               }}
             />
           )}
@@ -86,13 +90,48 @@ export default function App() {
               onClose={() => setShowOTP(false)}
               onGoBack={() => {
                 setShowOTP(false);
-                setShowForgotPassword(true);
+                setShowSignup(true);
               }}
-              onContinue={() => {
+              onSubmit={() => {
                 setShowOTP(false);
+                setShowPassword(true); // after signup flow OTP
               }}
             />
           )}
+
+          {showForgetotp && (
+  <ForgetOTP
+    onClose={() => setShowForgetotp(false)}
+    onLoginClick={() => {
+      setShowForgetotp(false);
+      setShowLogin(true);
+    }}
+    onGoBack={() => {
+      setShowForgetotp(false);         // hide OTP
+      setShowForgotPassword(true);     // show password reset
+    }}
+    onContinue={(otpCode) => {
+      // optional: validate OTP
+      setShowForgetotp(false);
+      setShowResetPassword(true);     // or move forward after OTP submit
+    }}
+  />
+)}
+
+
+          {showResetPassword && (
+  <Reset
+    onClose={() => setShowForgetotp(false)}
+    onLoginClick={() => {
+      setShowResetPassword(false);
+      setShowLogin(true);
+    }}
+    onGoBack={() => {
+      setShowResetPassword(false);
+      setShowForgetotp(true);
+    }}
+  />
+)}
 
           {showForgotPassword && (
             <Forget
@@ -103,11 +142,13 @@ export default function App() {
               }}
               onContinue={() => {
                 setShowForgotPassword(false);
-                setShowOTP(true);
+                setShowForgetotp(true); // go to OTP for forgot password flow
               }}
             />
           )}
         </main>
+
+        {/* Static Page Components */}
         <EdubrainingWelcomeSection />
         <TechCoursesSection />
         <SuccessPathInfographic />

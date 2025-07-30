@@ -20,18 +20,18 @@ const EduBrainingHero = () => {
                   AI Enhance courses for high paying job
                 </p>
                 <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-xl">
-                  Edubraining, founded by Vidhi Aggarwal and Lakhan Chahar, 
-                  aims to make high-quality technical education accessible and 
-                  affordable. The platform offers industry-expert-designed 
-                  recorded courses, live mentorship for personalized guidance, 
-                  and valid certifications. It also provides internship 
-                  opportunities and placement assistance to help students 
-                  build successful tech careers. Edubraining fosters a learning 
-                  community, empowering individuals to achieve their career 
+                  Edubraining, founded by Vidhi Aggarwal and Lakhan Chahar,
+                  aims to make high-quality technical education accessible and
+                  affordable. The platform offers industry-expert-designed
+                  recorded courses, live mentorship for personalized guidance,
+                  and valid certifications. It also provides internship
+                  opportunities and placement assistance to help students
+                  build successful tech careers. Edubraining fosters a learning
+                  community, empowering individuals to achieve their career
                   goals in the tech industry.
                 </p>
               </div>
-              
+
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105">
                 Explore Courses
               </button>
@@ -44,8 +44,8 @@ const EduBrainingHero = () => {
                 <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
                   <defs>
                     <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.6"/>
-                      <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.6"/>
+                      <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.6" />
+                      <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.6" />
                     </linearGradient>
                   </defs>
                   <path
@@ -97,29 +97,29 @@ const EduBrainingHero = () => {
                 <div className="absolute bottom-16 sm:bottom-24 lg:bottom-32 left-8 sm:left-12 lg:left-20 w-1.5 h-1.5 lg:w-2 lg:h-2 bg-blue-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
                 <div className="absolute top-20 sm:top-32 lg:top-40 right-6 sm:right-8 lg:right-12 w-1.5 h-1.5 lg:w-2 lg:h-2 bg-purple-400 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
               </div>
+              {/* Cart Widget - Bottom Right */}
+              <div className="absolute bottom-5 sm:-bottom-24 right-4 sm:right-6 z-50">
+                <div className="bg-slate-800/90 backdrop-blur-sm border border-slate-600 rounded-xl p-3 sm:p-4 shadow-2xl">
+                  <div className="flex items-center justify-between gap-4 sm:gap-6 lg:gap-8 min-w-36 sm:min-w-48">
+                    <div className="flex flex-col items-center">
+                      <div className="text-lg sm:text-2xl font-bold text-white">0</div>
+                      <div className="text-xs sm:text-sm text-gray-400">Courses</div>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <div className="text-lg sm:text-2xl font-bold text-white">₹0</div>
+                      <div className="text-xs sm:text-sm text-gray-400">Total</div>
+                    </div>
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg flex items-center gap-1 sm:gap-2 transition-colors duration-200">
+                      <ShoppingCart className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="text-xs sm:text-sm">Go to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
-
-        {/* Cart Widget - Bottom Right */}
-        { <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-40">
-          <div className="bg-slate-800/90 backdrop-blur-sm border border-slate-600 rounded-xl p-3 sm:p-4 shadow-2xl">
-            <div className="flex items-center justify-between gap-4 sm:gap-6 lg:gap-8 min-w-36 sm:min-w-48">
-              <div className="flex flex-col items-center">
-                <div className="text-lg sm:text-2xl font-bold text-white">0</div>
-                <div className="text-xs sm:text-sm text-gray-400">Courses</div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="text-lg sm:text-2xl font-bold text-white">₹0</div>
-                <div className="text-xs sm:text-sm text-gray-400">Total</div>
-              </div>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg flex items-center gap-1 sm:gap-2 transition-colors duration-200">
-                <ShoppingCart className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="text-xs sm:text-sm">Go to Cart</span>
-              </button>
-            </div>
-          </div>
-        </div> }
 
         {/* Background Elements */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl animate-pulse"></div>

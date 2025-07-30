@@ -83,11 +83,6 @@ const EdubrainingWelcomeSection = () => {
     <div className="min-h-screen bg-[#0C0C0D] py-16 px-6 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-30">
-        <img
-        src="/blur.png"
-        alt="Blur Decoration"
-        className="absolute top-0 right-0 z-0 w-[550px] h-[749px] hidden md:block"
-      />
         <div className="absolute top-20 left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl"></div>

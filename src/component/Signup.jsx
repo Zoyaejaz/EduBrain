@@ -1,121 +1,121 @@
 import React, { useState } from "react";
-import { X, Phone } from "lucide-react";
+import { X } from "lucide-react";
 
 export default function Signup({ onClose, onLoginClick, onContinue }) {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
-    const handleContinue = () => {
-        if (!name.trim() || !email.trim()) {
-            alert("Please fill in all fields before continuing.");
-            return;
-        }
-        onContinue(); 
-    };
+  const handleContinue = () => {
+    if (!name.trim() || !email.trim()) {
+      alert("Please fill in all fields before continuing.");
+      return;
+    }
+    onContinue();
+  };
 
-    return (
-        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 p-4">
-            <div className="flex flex-col md:flex-row rounded-[37px] md:rounded-[37px] overflow-hidden shadow-2xl border border-[#1545C2] border-2 bg-opacity-100 w-full max-w-[1108px] max-h-[90vh] md:h-[625px]">
-                
-                {/* Left Side - Mobile: Top section, Desktop: Left side */}
-                <div className="w-full md:w-1/2 bg-[#1545C2] flex flex-col justify-center items-start text-white p-6 md:p-8 text-start relative">
-                    {/* Close button - Only visible on mobile */}
-                    <button
-                        onClick={onClose}
-                        className="absolute cursor-pointer top-4 right-4 text-white hover:text-gray-200 block md:hidden"
-                    >
-                        <X size={20} />
-                    </button>
-                    
-                    {/* Heading Text */}
-                    <h2 className="font-inter font-bold uppercase text-xl md:text-[26px] leading-[30px] md:leading-[40px] tracking-normal mb-2">
-                        <span className="block md:hidden">Build future ready skills</span>
-                        <span className="hidden md:block">Master the Skills <br />
-                        for Tomorrow's Top Tech Jobs.</span>
-                    </h2>
+  return (
+    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 p-4 overflow-y-auto">
+      <div className="flex flex-col md:flex-row rounded-[37px] overflow-hidden shadow-2xl border border-[#1545C2] w-full max-w-[1108px] max-h-[90vh] md:h-[625px] bg-white">
+        
+        {/* Left Section */}
+        <div className="w-full md:w-1/2 bg-[#1545C2] flex flex-col justify-center items-start text-white p-6 md:p-8 relative">
+          {/* Mobile Close Button */}
+          <button
+            onClick={onClose}
+            className="absolute cursor-pointer top-4 right-4 text-white hover:text-gray-200 block md:hidden"
+          >
+            <X size={20} />
+          </button>
 
-                    <p className="font-inter font-medium text-sm md:text-[15px] leading-[20px] md:leading-[29.16px] text-[#CEDAEE] mb-4 md:mb-6 tracking-normal">
-                        Elevate Your Skills, secure Your Future
-                    </p>
+          <h2 className="font-inter font-bold uppercase text-xl md:text-[26px] leading-[30px] md:leading-[40px] tracking-normal mb-2">
+            <span className="block md:hidden">Build future ready skills</span>
+            <span className="hidden md:block">
+              Master the Skills <br /> for Tomorrow's Top Tech Jobs.
+            </span>
+          </h2>
 
-                    {/* Image - Hidden on mobile */}
-                    <img
-                        src="/signup.png"
-                        alt="Person working"
-                        className="hidden md:block object-contain w-full max-w-[577px] h-auto max-h-[390px]"
-                    />
-                </div>
+          <p className="font-inter font-medium text-sm md:text-[15px] leading-[20px] md:leading-[29.16px] text-[#CEDAEE] mb-4 md:mb-6 tracking-normal">
+            Elevate Your Skills, secure Your Future
+          </p>
 
-                {/* Right Side - Mobile: Bottom section, Desktop: Right side */}
-                <div className="w-full md:w-1/2 bg-[#020817] text-white p-6 md:p-8 relative overflow-y-auto flex-1">
-                    {/* Close button - Only visible on desktop */}
-                    <button
-                        onClick={onClose}
-                        className="absolute cursor-pointer top-6 right-6 text-gray-400 hover:text-white hidden md:block"
-                    >
-                        <X size={24} />
-                    </button>
-
-                    <div className="mt-8 md:mt-12 mb-4 md:mb-6">
-                        <p className="text-gray-400 text-sm mb-2">Let's get started</p>
-                        <h2 className="text-xl md:text-2xl font-semibold">Create an Account</h2>
-                    </div>
-
-                    <div className="space-y-4">
-                        <div className="relative w-full">
-                            <label className="absolute -top-3 left-4 bg-[#020817] px-1 text-sm text-white">
-                                Name
-                            </label>
-                            <input
-                                type="text"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                placeholder="Enter your name"
-                                required
-                                className="w-full px-4 py-2 text-center bg-transparent border border-blue-600 rounded-full text-white placeholder-blue-400 focus:outline-none focus:border-blue-400"
-                            />
-                        </div>
-                        <br/>
-
-                        <div className="relative w-full">
-                            <label className="absolute -top-3 left-4 bg-[#020817] px-1 text-sm text-white">
-                                Email address
-                            </label>
-                            <input
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                placeholder="Enter your email"
-                                required
-                                className="w-full px-4 py-2 text-center bg-transparent border border-blue-600 rounded-full text-white placeholder-blue-400 focus:outline-none focus:border-blue-400"
-                            />
-                        </div>
-<br/>
-                        <button
-                            onClick={handleContinue}
-                            className="w-full py-2 bg-white text-black cursor-pointer font-medium rounded-full hover:bg-gray-100 transition"
-                        >
-                            Continue
-                        </button>
-                    </div>
-
-                    <div className="text-center mt-4 md:mt-6">
-                        <span className="text-gray-400">Already have an account? </span>
-                        <button
-                            onClick={() => {
-                                onClose();
-                                onLoginClick();
-                            }}
-                            className="text-blue-400 cursor-pointer hover:text-blue-300 underline"
-                        >
-                            Log in
-                        </button>
-                    </div>
-
-                    
-                    
-                </div>
-            </div>
+          {/* Show image only on md and up */}
+          <img
+            src="/signup.png"
+            alt="Person working"
+            className="hidden md:block object-contain w-full max-w-[577px] h-auto max-h-[390px]"
+          />
         </div>
-    );
+
+        {/* Right Section */}
+        <div className="w-full md:w-1/2 bg-[#020817] text-white p-6 md:p-8 relative overflow-y-auto">
+          {/* Desktop Close Button */}
+          <button
+            onClick={onClose}
+            className="absolute cursor-pointer top-6 right-6 text-gray-400 hover:text-white hidden md:block"
+          >
+            <X size={24} />
+          </button>
+
+          <div className="mt-6 md:mt-12 mb-4 md:mb-6">
+            <p className="text-gray-400 text-sm mb-2">Let's get started</p>
+            <h2 className="text-xl md:text-2xl font-semibold">Create an Account</h2>
+          </div>
+          <br/>
+
+          <div className="space-y-4">
+            <div className="relative w-full">
+              <label className="absolute -top-3 left-4 bg-[#020817] px-1 text-sm text-white">
+                Name
+              </label>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Enter your name"
+                required
+                className="w-full px-4 py-2 text-center bg-transparent border border-blue-600 rounded-full text-white placeholder-blue-400 focus:outline-none focus:border-blue-400"
+              />
+            </div>
+            <br/>
+
+            <div className="relative w-full">
+              <label className="absolute -top-3 left-4 bg-[#020817] px-1 text-sm text-white">
+                Email address
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                required
+                className="w-full px-4 py-2 text-center bg-transparent border border-blue-600 rounded-full text-white placeholder-blue-400 focus:outline-none focus:border-blue-400"
+              />
+            </div>
+            <br/>
+            <br/>
+
+            <button
+              onClick={handleContinue}
+              className="w-full py-2 bg-white text-black cursor-pointer font-medium rounded-full hover:bg-gray-100 transition"
+            >
+              Continue
+            </button>
+          </div>
+
+          <div className="text-center mt-4 md:mt-6">
+            <span className="text-white">Already have an account? </span>
+            <button
+              onClick={() => {
+                onClose();
+                onLoginClick();
+              }}
+              className="text-blue-400 cursor-pointer hover:text-blue-300 underline"
+            >
+              Log in
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

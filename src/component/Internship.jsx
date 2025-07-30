@@ -1,100 +1,115 @@
-// InternshipOpportunities.jsx
 import React from 'react';
 
 const InternshipOpportunities = () => {
   const benefits = [
     {
       title: "Practical Application",
-      description: "An internship with Edubraining transforms your resume into a powerhouse, showcasing your ability to thrive professionally. This distinguished experience highlights your practical skills, industry knowledge, and adaptability, setting you apart from other candidates. Potential employers value hands-on experience, and your internship with Edubraining demonstrates your commitment to personal and professional growth. It's not just a line on your resume; it's a testament to your readiness to excel in the workforce.",
-      isExpanded: true
+      description:
+        "An internship with Edubraining transforms your resume into a powerhouse, showcasing your ability to thrive professionally. This distinguished experience highlights your practical skills, industry knowledge, and adaptability, setting you apart from other candidates. Potential employers value hands-on experience, and your internship with Edubraining demonstrates your commitment to personal and professional growth. It's not just a line on your resume; it's a testament to your readiness to excel in the workforce.",
+      isExpanded: true,
     },
     {
       title: "Industry Networking",
-      description: "Build valuable connections with industry professionals and expand your network for future career opportunities.",
-      isExpanded: false
+      description:
+        "Build valuable connections with industry professionals and expand your network for future career opportunities.",
+      isExpanded: false,
     },
     {
       title: "Resume Powerhouse",
-      description: "Transform your resume with hands-on experience that employers value and recognize.",
-      isExpanded: false
+      description:
+        "Transform your resume with hands-on experience that employers value and recognize.",
+      isExpanded: false,
     },
     {
       title: "Skill Refinement",
-      description: "Develop and polish your professional skills through real-world application and mentorship.",
-      isExpanded: false
+      description:
+        "Develop and polish your professional skills through real-world application and mentorship.",
+      isExpanded: false,
     },
     {
       title: "Exclusive Opportunities",
-      description: "Access unique career paths and opportunities available only through our internship program.",
-      isExpanded: false
-    }
+      description:
+        "Access unique career paths and opportunities available only through our internship program.",
+      isExpanded: false,
+    },
   ];
 
   return (
-    <div className="bg-[#0C0C0D] text-white min-h-screen py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#0C0C0D] text-white min-h-screen py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="mb-8 sm:mb-12 lg:mb-16">
-          <p className="text-blue-400 text-sm sm:text-base lg:text-lg mb-2 sm:mb-4 font-medium">Internship Opportunities</p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight">
+        {/* Header */}
+        <div className="mb-10 text-center lg:text-left">
+          <p className="text-blue-400 text-sm sm:text-base lg:text-lg mb-2 font-medium">
+            Internship Opportunities
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
             How It Propels Your Career?
           </h1>
-          <p className="text-[#7A7C80] text-sm sm:text-base lg:text-lg leading-relaxed max-w-3xl">
+          <p className="text-[#7A7C80] text-sm sm:text-base lg:text-lg leading-relaxed max-w-3xl mx-auto lg:mx-0">
             Internships aren't just about gaining work experience; they are your pathway to professional triumph. 
-            Discover how internships with Edubraining propels your career.
+            Discover how internships with Edubraining propel your career.
           </p>
         </div>
 
-        {/* Main Content Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap- lg:gap-2 items-start ">
-          {/* Left Side - Image */}
-          <div className="relative order-2 lg:order-1">
-            <div className="w-[600px] h-[416.4px] sm:h-80 lg:h-96 overflow-hidden">
-              {/* Placeholder for image - replace with your actual image */}
-              <div className="w-full h-full  flex items-center justify-center text-gray-500 text-sm sm:text-base lg:text-lg font-medium text-center p-4">
-                <img src="interv.png" 
+        {/* Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          {/* Image */}
+          <div className="order-2 lg:order-1">
+            <div className="w-full max-w-xl mx-auto lg:mx-0 aspect-video overflow-hidden rounded-xl shadow-lg">
+              <img
+                src="interv.png"
                 alt="Teacher"
-                className="h-full w-full"
-                />
-                
-              </div>
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
-          {/* Right Side - Benefits List */}
-          <div className="space-y-1 order-1 lg:order-2">
+          {/* Benefits List */}
+          <div className="order-1 lg:order-2 space-y-4">
             {benefits.map((benefit, index) => (
-              <div 
+              <div
                 key={index}
                 className={`border-b border-gray-700 transition-all duration-300 ${
-                  benefit.isExpanded ? 'pb-4 sm:pb-6 lg:pb-8' : 'pb-2 sm:pb-3 lg:pb-4'
+                  benefit.isExpanded
+                    ? "pb-4 sm:pb-6 lg:pb-8"
+                    : "pb-2 sm:pb-3 lg:pb-4"
                 }`}
               >
                 <div className="flex items-center justify-between py-3 sm:py-4 cursor-pointer group">
-                  <h3 className={`text-lg sm:text-xl font-semibold transition-colors duration-300 pr-4 ${
-                    benefit.isExpanded 
-                      ? 'text-blue-400' 
-                      : 'text-gray-300 group-hover:text-white'
-                  }`}>
+                  <h3
+                    className={`text-base sm:text-lg md:text-xl font-semibold pr-4 transition-colors duration-300 ${
+                      benefit.isExpanded
+                        ? "text-blue-400"
+                        : "text-gray-300 group-hover:text-white"
+                    }`}
+                  >
                     {benefit.title}
                   </h3>
-                  <div className={`w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center transition-transform duration-300 flex-shrink-0 ${
-                    benefit.isExpanded ? 'rotate-45' : ''
-                  }`}>
-                    <div className={`w-3 sm:w-4 h-0.5 bg-current absolute transition-colors duration-300 ${
-                      benefit.isExpanded ? 'bg-blue-400' : 'bg-gray-400 group-hover:bg-white'
-                    }`}></div>
-                    <div className={`w-0.5 h-3 sm:h-4 bg-current absolute transition-all duration-300 ${
-                      benefit.isExpanded 
-                        ? 'bg-blue-400 rotate-90' 
-                        : 'bg-gray-400 group-hover:bg-white'
-                    }`}></div>
+                  <div
+                    className={`w-5 h-5 sm:w-6 sm:h-6 relative flex items-center justify-center transition-transform duration-300 flex-shrink-0 ${
+                      benefit.isExpanded ? "rotate-45" : ""
+                    }`}
+                  >
+                    <div
+                      className={`w-3 sm:w-4 h-0.5 bg-current absolute transition-colors duration-300 ${
+                        benefit.isExpanded
+                          ? "bg-blue-400"
+                          : "bg-gray-400 group-hover:bg-white"
+                      }`}
+                    ></div>
+                    <div
+                      className={`w-0.5 h-3 sm:h-4 bg-current absolute transition-all duration-300 ${
+                        benefit.isExpanded
+                          ? "bg-blue-400 rotate-90"
+                          : "bg-gray-400 group-hover:bg-white"
+                      }`}
+                    ></div>
                   </div>
                 </div>
-                
+
                 {benefit.isExpanded && (
-                  <div className="pb-2 sm:pb-3 lg:pb-4 animate-fadeIn">
-                    <p className="text-gray-300 leading-relaxed text-sm sm:text-base pr-8">
+                  <div className="animate-fadeIn">
+                    <p className="text-gray-300 leading-relaxed text-sm sm:text-base pr-4">
                       {benefit.description}
                     </p>
                   </div>
@@ -105,6 +120,7 @@ const InternshipOpportunities = () => {
         </div>
       </div>
 
+      {/* Custom Animation */}
       <style jsx>{`
         @keyframes fadeIn {
           from {
@@ -116,7 +132,7 @@ const InternshipOpportunities = () => {
             transform: translateY(0);
           }
         }
-        
+
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
         }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ChevronLeft, X } from "lucide-react";
 
-export default function OTP({ onClose, onGoBack, onLoginClick, onSubmit }) {
+export default function ForgetOTP({ onClose, onGoBack, onLoginClick, onContinue }) {
   const [otpCode, setOtpCode] = useState("");
 
   const handleGoBack = () => {
@@ -17,64 +17,69 @@ export default function OTP({ onClose, onGoBack, onLoginClick, onSubmit }) {
       alert("Please enter the OTP code.");
       return;
     }
-    if (onSubmit) {
-      onSubmit(otpCode);
+
+    if (onContinue) {
+      onContinue(otpCode);
     }
   };
 
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 p-4">
-      <div className="flex flex-col md:flex-row rounded-[20px] overflow-hidden shadow-2xl border border-[#1545C2] bg-white/5 backdrop-blur w-full max-w-[1108px] max-h-[95vh] md:h-[625px]">
+      <div className="flex flex-col md:flex-row w-full max-w-[1108px] max-h-[90vh] rounded-[30px] overflow-hidden shadow-2xl border border-[#1545C2] bg-opacity-100 bg-white">
 
         {/* Left Section */}
-        <div className="w-full md:w-1/2 bg-[#1545C2] flex flex-col justify-center items-start text-white p-6 md:p-10 relative">
-          {/* Mobile Close Button */}
+        <div className="w-full md:w-1/2 bg-[#1545C2] text-white flex flex-col justify-center items-start p-6 md:p-10 relative">
+          {/* Mobile Close */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 md:hidden text-white hover:text-gray-300"
+            className="absolute top-4 right-4 text-white hover:text-gray-200 block md:hidden"
           >
-            <X size={22} />
+            <X size={20} />
           </button>
 
-          {/* Text Content */}
-          <h2 className="font-inter font-bold uppercase text-xl md:text-2xl leading-snug tracking-normal mb-2">
+          <h2 className="text-xl md:text-2xl font-bold uppercase leading-snug mb-2">
             <span className="block md:hidden">Build future ready skills</span>
-            <span className="hidden md:block">Master the Skills <br />for Tomorrow's Top Tech Jobs.</span>
+            <span className="hidden md:block">
+              Master the Skills <br />
+              for Tomorrow's Top Tech Jobs.
+            </span>
           </h2>
 
-          <p className="font-inter font-medium text-sm md:text-base text-[#CEDAEE] mb-6">
+          <p className="text-sm md:text-base text-[#CEDAEE] mb-6 leading-relaxed">
             Elevate Your Skills, Secure Your Future
           </p>
 
-          {/* Image */}
           <img
             src="/signup.png"
-            alt="Illustration"
-            className="hidden md:block w-full max-w-[577px] max-h-[390px] object-contain"
+            alt="Working person"
+            className="hidden md:block object-contain w-full max-w-[577px] h-auto max-h-[390px]"
           />
         </div>
 
         {/* Right Section */}
-        <div className="w-full md:w-1/2 bg-[#020817] text-white relative overflow-y-auto flex flex-col items-center justify-center p-6 md:p-10">
-          {/* Desktop Close Button */}
+        <div className="w-full md:w-1/2 bg-[#020817] text-white flex flex-col justify-center items-center p-6 md:p-10 overflow-y-auto">
+          {/* Desktop Close */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 hidden md:block text-gray-400 hover:text-white"
+            className="absolute top-4 right-4 text-gray-400 hover:text-white hidden md:block"
           >
             <X size={24} />
           </button>
 
           <div className="w-full max-w-md">
-            <h2 className="text-xl md:text-2xl font-semibold text-center mb-4">Check Your Inbox</h2>
+            <h2 className="text-xl md:text-2xl font-semibold text-center mb-4">
+              Check Your Inbox
+            </h2>
 
-            <div className="text-center text-gray-400 text-sm mb-6">
+            <div className="text-center text-sm text-gray-400 mb-6">
               <p>Enter the verification code we just sent to</p>
-              <p className="font-medium text-white">xyz@gmail.com</p>
+              <p>xyz@gmail.com</p>
             </div>
-<br/>
+            <br/>
+
             <div className="space-y-4">
-              <div className="relative w-full">
-                <label className="absolute -top-2 left-4 bg-[#020817] px-2 text-sm text-white">
+              <div className="relative">
+                <label className="absolute -top-3 left-4 bg-[#020817] px-1 text-sm text-white">
                   Enter code
                 </label>
                 <input
@@ -86,12 +91,13 @@ export default function OTP({ onClose, onGoBack, onLoginClick, onSubmit }) {
                 />
               </div>
               <br/>
+            
 
               <button
                 onClick={handleContinue}
-                className="w-full py-2 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition"
+                className="w-full py-2 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition"
               >
-                Submit
+                Confirm
               </button>
 
               <div className="text-right">
@@ -105,12 +111,14 @@ export default function OTP({ onClose, onGoBack, onLoginClick, onSubmit }) {
                   Resend Email
                 </button>
               </div>
+              
+        
 
 
               <div className="flex justify-start mt-6 md:mt-12">
                 <button
                   onClick={handleGoBack}
-                  className="inline-flex items-center text-white px-4 py-2 border border-blue-600 rounded-full hover:border-gray-400"
+                  className="inline-flex items-center text-white transition px-3 py-2 rounded-full border border-blue-600 hover:border-gray-400"
                 >
                   <ChevronLeft className="w-4 h-4 mr-2" />
                   Go back
@@ -119,7 +127,6 @@ export default function OTP({ onClose, onGoBack, onLoginClick, onSubmit }) {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
