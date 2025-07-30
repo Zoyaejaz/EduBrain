@@ -36,6 +36,11 @@ export default function Reset({ onClose, onGoBack, onLoginClick, onReset }) {
     // Redirect to login
     onLoginClick();
   };
+  const  handleClose = () => {
+    if(onClose){
+      onLoginClick();
+    }
+  }
 
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 p-4">
