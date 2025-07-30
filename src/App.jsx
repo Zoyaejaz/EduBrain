@@ -121,7 +121,11 @@ export default function App() {
 
           {showResetPassword && (
   <Reset
-    onClose={() => setShowForgetotp(false)}
+    onClose={() => { 
+      setShowForgetotp(false);
+      setShowLogin(true); 
+    
+    }}
     onLoginClick={() => {
       setShowResetPassword(false);
       setShowLogin(true);
