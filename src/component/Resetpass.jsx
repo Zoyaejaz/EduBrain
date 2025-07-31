@@ -43,11 +43,28 @@ export default function Reset({ onClose, onGoBack, onLoginClick, onReset }) {
   }
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 p-4">
-      <div className="flex flex-col md:flex-row rounded-[37px] overflow-hidden shadow-2xl border border-[#1545C2] bg-opacity-100 w-full max-w-[1108px] max-h-[90vh] md:h-[625px]">
+    <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50 p-4">
+      <div className="flex flex-col md:flex-row rounded-[37px] md:rounded-[37px] overflow-hidden shadow-2xl border border-[#1545C2] border-1 bg-opacity-100 w-full max-w-[1108px] max-h-[90vh] md:h-[625px]">
 
         {/* Left Section */}
-        <div className="w-full md:w-1/2 bg-[#1545C2] flex flex-col justify-center items-start text-white p-6 md:p-8 relative">
+        
+        <div className="relative w-full md:w-1/2 bg-[#1545C2] flex flex-col justify-center items-start text-white p-6 md:p-8 text-start">
+          <div
+            className="absolute top-0 left-0 w-38 h-38 z-0 blur-[70px]"
+            style={{
+              background:
+                "linear-gradient(224.6deg, rgba(154, 196, 254, 0.72) -3.85%, rgba(21, 69, 194, 0.72) 121.24%)",
+              borderBottomRightRadius: "50%",
+            }}
+          />
+          <div
+            className="absolute top-0 left-0 w-38 h-38 z-0 blur-[50px]"
+            style={{
+              background:
+                "linear-gradient(224.6deg, rgba(154, 196, 254, 0.72) -3.85%, rgba(21, 69, 194, 0.72) 121.24%)",
+              borderBottomRightRadius: "50%",
+            }}
+          />
           <button
             onClick={onClose}
             className="absolute cursor-pointer top-4 right-4 text-white hover:text-gray-200 block md:hidden"
@@ -75,10 +92,18 @@ export default function Reset({ onClose, onGoBack, onLoginClick, onReset }) {
         </div>
 
         {/* Right Section */}
-        <div className="w-full md:w-1/2 bg-[#020817] text-white relative overflow-y-auto flex flex-col items-center justify-center p-6 md:p-8">
+        <div className="relative w-full md:w-1/2 bg-[#020817] text-white p-6 md:p-12 flex items-center justify-center overflow-y-auto">
+        <div
+            className="absolute bottom-0 right-0 w-38 h-38 z-0 blur-[50px]"
+            style={{
+              background:
+                "linear-gradient(224.6deg, rgba(154, 196, 254, 0.72) -3.85%, rgba(21, 69, 194, 0.72) 121.24%)",
+              borderTopLeftRadius: "50%",
+            }}
+          />
           <button
             onClick={onClose}
-            className="absolute cursor-pointer top-3 md:top-6 right-6 text-gray-400 hover:text-white hidden md:block"
+            className="absolute cursor-pointer top-6 right-6 text-gray-400 hover:text-white hidden md:block z-10"
           >
             <X size={24} />
           </button>
@@ -102,7 +127,7 @@ export default function Reset({ onClose, onGoBack, onLoginClick, onReset }) {
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   placeholder="New password"
-                  className="w-full px-4 py-2 text-center bg-transparent border border-blue-600 rounded-full text-white placeholder-blue-400 focus:outline-none focus:border-blue-400"
+                  className="w-full px-4 py-3 bg-transparent border border-blue-600 rounded-full text-white placeholder-blue-400 focus:outline-none focus:border-blue-400 text-center"
                 />
               </div>
               <br/>
@@ -116,13 +141,13 @@ export default function Reset({ onClose, onGoBack, onLoginClick, onReset }) {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Re-enter new password"
-                  className="w-full px-4 py-2 text-center bg-transparent border border-blue-600 rounded-full text-white placeholder-blue-400 focus:outline-none focus:border-blue-400"
+                  className="w-full px-4 py-3 bg-transparent border border-blue-600 rounded-full text-white placeholder-blue-400 focus:outline-none focus:border-blue-400 text-center"
                 />
               </div>
 <br/>
               <button
                 onClick={handleReset}
-                className="w-full py-2 bg-white text-black font-medium rounded-full hover:bg-gray-100 transition"
+                className="w-full py-3 bg-white text-black cursor-pointer font-medium rounded-full hover:bg-gray-100 transition"
               >
                 Continue
               </button>
