@@ -19,6 +19,8 @@ import TechCoursesSection from "./component/Tech";
 import EdubrainingWelcomeSection from "./component/Welcome";
 import ForgetOTP from "./component/Forgetotp";
 import Reset from "./component/Resetpass";
+import LearningExperienceSection from "./component/Learning";
+import EduBrainingWebsite from "./component/About";
 
 export default function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -100,38 +102,38 @@ export default function App() {
           )}
 
           {showForgetotp && (
-  <ForgetOTP
-    onClose={() => setShowForgetotp(false)}
-    onLoginClick={() => {
-      setShowForgetotp(false);
-      setShowLogin(true);
-    }}
-    onGoBack={() => {
-      setShowForgetotp(false);         // hide OTP
-      setShowForgotPassword(true);     // show password reset
-    }}
-    onContinue={(otpCode) => {
-      // optional: validate OTP
-      setShowForgetotp(false);
-      setShowResetPassword(true);     // or move forward after OTP submit
-    }}
-  />
-)}
+            <ForgetOTP
+              onClose={() => setShowForgetotp(false)}
+              onLoginClick={() => {
+                setShowForgetotp(false);
+                setShowLogin(true);
+              }}
+              onGoBack={() => {
+                setShowForgetotp(false);         // hide OTP
+                setShowForgotPassword(true);     // show password reset
+              }}
+              onContinue={(otpCode) => {
+                // optional: validate OTP
+                setShowForgetotp(false);
+                setShowResetPassword(true);     // or move forward after OTP submit
+              }}
+            />
+          )}
 
 
           {showResetPassword && (
-  <Reset
-    onClose={() => setShowResetPassword(false) }
-    onLoginClick={() => {
-      setShowResetPassword(false);
-      setShowLogin(true);
-    }}
-    onGoBack={() => {
-      setShowResetPassword(false);
-      setShowForgetotp(true);
-    }}
-  />
-)}
+            <Reset
+              onClose={() => setShowResetPassword(false)}
+              onLoginClick={() => {
+                setShowResetPassword(false);
+                setShowLogin(true);
+              }}
+              onGoBack={() => {
+                setShowResetPassword(false);
+                setShowForgetotp(true);
+              }}
+            />
+          )}
 
           {showForgotPassword && (
             <Forget
@@ -149,6 +151,8 @@ export default function App() {
         </main>
 
         {/* Static Page Components */}
+        <LearningExperienceSection />
+        <EduBrainingWebsite />
         <EdubrainingWelcomeSection />
         <TechCoursesSection />
         <SuccessPathInfographic />
