@@ -154,14 +154,16 @@ export default function App() {
         <LearningExperienceSection />
         <EduBrainingWebsite />
         <EdubrainingWelcomeSection />
-        <TechCoursesSection />
-        <SuccessPathInfographic />
-        <CertificationAchievement />
-        <InternshipOpportunities />
-        <TestimonialsSection />
-        <TechJourneyCTA />
-        <FAQSection />
-        <Footer />
+        {/*
+  <TechCoursesSection />
+  <SuccessPathInfographic />
+  <CertificationAchievement />
+  <InternshipOpportunities />
+  <TestimonialsSection />
+  <TechJourneyCTA />
+  <FAQSection />
+  <Footer />
+*/}
       </div>
     </Router>
   );

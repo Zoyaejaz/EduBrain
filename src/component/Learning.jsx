@@ -86,29 +86,6 @@ const LearningExperienceSection = () => {
           }}
         />
 
-        {/* Women Entrepreneurs Section */}
-        <div className="text-center">
-          <h3 className="text-2xl lg:text-3xl font-bold text-white mb-8">
-            Proudly Powered by Women Entrepreneurs
-          </h3>
-
-          <div className="max-w-4xl mx-auto">
-            <div
-              className="border-l-4 pl-6 py-4 text-left"
-              style={{
-                borderColor: '#4f9cf9',
-                backgroundColor: 'rgba(79, 156, 249, 0.05)'
-              }}
-            >
-              <p className="text-base lg:text-lg leading-relaxed" style={{ color: '#d1d5db' }}>
-                <span className="font-semibold text-white">EduBraining</span> is led and inspired by{' '}
-                <span style={{ color: '#4f9cf9' }} className="font-medium">
-                  women entrepreneurs
-                </span>, creating more opportunities for women in tech and business leadership. Our platform isn't just about learning—it's about pioneering change together.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
