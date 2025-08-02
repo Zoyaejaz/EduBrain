@@ -17,37 +17,37 @@ const EdubrainingHero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
           {/* Left Content */}
           <div className="space-y-8 lg:pr-8 ml-8">
-            <div className="space-y-6">
+            <div className="space-y-1">
               <h1 className="text-2xl lg:text-5xl font-bold leading-tight">
                 Discover the future
                 <br />
-                of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6C98FF] to-white animate-pulse">learning</span>
+                of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1545C2] to-[#859EE1] to-white ">learning</span>
               </h1>
 
-              <p className="text-xl text-[#6C98FF] leading-relaxed">
-                <span className="text-blue-400 font-semibold font-roboto size-32px">AI Enhance courses for high paying job</span>
+              <p className="text-2xl text-[#6C98FF] leading-relaxed">
+                <span className="text-[#6C98FF] font-semibold font-roboto ">AI Enhance courses for high paying job</span>
               </p>
 
-              <div className="text-white leading-relaxed font-roboto size-18px">
-                <p className="mb-2">
+              <div className="text-white leading-relaxed font-roboto ">
+                <p className="mb-2 mt-7">
                   <span className="text-white font-bold font-roboto">Edubraining</span> is your gateway to a high-growth tech career. Founded by
                 </p>
                 <p className="mb-2">
-                <span className="text-[#6C98FF] hover:text-cyan-400 transition-colors cursor-pointer">Vidit Agarwal</span> and <span className="text-[#6C98FF] hover:text-cyan-400 transition-colors cursor-pointer">Ishan Ghihar</span>, we're on a mission to make top-
+                <span className="text-[#1763FF]  cursor-pointer">Vidit Agarwal</span> and <span className="text-[#1763FF]  cursor-pointer">Ishan Ghihar</span>, we're on a mission to make top-
                 </p>
                 <p className="">
                   tier technical education accessible, affordable, and truly career-
                 </p>
                 <p>focused for everyone.</p>
-                <p className="mt-5 font-roboto size-17px">
-                  Explore courses today and take the first step toward your <span className="text-[#6C98FF] font-semibold">dream tech job</span>.
+                <p className="mt-5 mb-0 font-roboto size-17px text-white">
+                  Explore courses today and take the first step toward your <span className="text-[#57B6FF] font-semibold">dream tech job</span>.
                 </p>
               </div>
             </div>
 
             <button
   onClick={addToCart}
-  className="bg-white text-black w-[193px] h-[40px] rounded-full font-semibold text-lg px-6 whitespace-nowrap hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex justify-center items-center"
+  className="mt-0 bg-white text-black w-[193px] h-[40px] rounded-full font-semibold text-lg px-6 py-6 whitespace-nowrap cursor-pointer flex justify-center items-center"
 >
   Explore Courses
 </button>
@@ -55,66 +55,51 @@ const EdubrainingHero = () => {
 
 
             {/* Features Grid */}
-            <div className="grid md:grid-cols-3 gap-8 pt-8">
-              {/* Why EduBraining */}
-              <div className="space-y-4">
-                <h3 className="text-[#1763FF] font-semibold text-lg border-b border-1px border-white pb-2">
-                  Why EduBraining
-                </h3>
-                <div className="space-y-3">
-                  {[
-                    'Industry Expert Courses',
-                    'Live Mentorship',
-                    'Flexible Learning',
-                    'Career Support'
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center space-x-3 group">
-                      <Check className="w-4 h-4 text-green-400 group-hover:scale-110 transition-transform" />
-                      <span className="text-gray-300 group-hover:text-white transition-colors">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+<div className="grid md:grid-cols-2 gap-8 pt-8">
+  {/* Why EduBraining */}
+  <div className="space-y-4">
+    <h3 className="text-blue-400 font-semibold text-lg border-b border-blue-400 pb-2">
+      Why EduBraining
+    </h3>
+    <div className="space-y-3">
+      {[
+        'Industry-Expert Courses',
+        'Live Mentorship',
+        'Flexible Learning',
+        'Career Support'
+      ].map((item, index) => (
+        <div key={index} className="flex items-center space-x-3 group">
+          <Check className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
+          <span className="text-white group-hover:text-blue-200 transition-colors">{item}</span>
+        </div>
+      ))}
+    </div>
+  </div>
 
-              {/* Skills You'll Master */}
-              <div className="space-y-4">
-                <h3 className="text-blue-400 font-semibold text-lg border-b border-blue-400 pb-2">
-                  Skills You'll Master
-                </h3>
-                <div className="space-y-3">
-                  {[
-                    'Power BI',
-                    'Data Analytics',
-                    'Machine Learning',
-                    'Full Stack Development'
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center space-x-3 group">
-                      <Check className="w-4 h-4 text-green-400 group-hover:scale-110 transition-transform" />
-                      <span className="text-gray-300 group-hover:text-white transition-colors">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+  {/* Skills You'll Master */}
+  <div className="space-y-4">
+    <h3 className="text-blue-400 font-semibold text-lg border-b border-blue-400 pb-2">
+      Skills You'll Master
+    </h3>
+    <div className="space-y-3">
+      {[
+        'Power BI',
+        'Data Analytics',
+        'Machine Learning',
+        'Full Stack Development',
+        'Web Technologies',
+        'Programming Languages',
+        'UI/UX'
+      ].map((item, index) => (
+        <div key={index} className="flex items-center space-x-3 group">
+          <Check className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
+          <span className="text-white group-hover:text-blue-200 transition-colors">{item}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 
-              {/* Technologies */}
-              <div className="space-y-4">
-                <h3 className="text-blue-400 font-semibold text-lg border-b border-blue-400 pb-2">
-                  Technologies
-                </h3>
-                <div className="space-y-3">
-                  {[
-                    'Web Technologies',
-                    'Programming Languages',
-                    'UI/UX'
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center space-x-3 group">
-                      <Check className="w-4 h-4 text-green-400 group-hover:scale-110 transition-transform" />
-                      <span className="text-gray-300 group-hover:text-white transition-colors">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right Content - Visual Elements */}
@@ -136,7 +121,7 @@ const EdubrainingHero = () => {
           <div className="text-lg sm:text-2xl font-bold text-white">0</div>
           <div className="text-xs sm:text-sm text-gray-400">Courses</div>
         </div>
-        <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center bg-[#1545C20D]">
           <div className="text-lg sm:text-2xl font-bold text-white">₹0</div>
           <div className="text-xs sm:text-sm text-gray-400">Total</div>
         </div>
