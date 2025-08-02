@@ -21,6 +21,7 @@ import ForgetOTP from "./component/Forgetotp";
 import Reset from "./component/Resetpass";
 import LearningExperienceSection from "./component/Learning";
 import EduBrainingWebsite from "./component/About";
+import WhatMakesUsDifferent from "./component/Welcome";
 
 export default function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -153,7 +154,7 @@ export default function App() {
         {/* Static Page Components */}
         <LearningExperienceSection />
         <EduBrainingWebsite />
-        <EdubrainingWelcomeSection />
+        <WhatMakesUsDifferent />
         {/*
   <TechCoursesSection />
   <SuccessPathInfographic />

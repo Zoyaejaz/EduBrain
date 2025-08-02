@@ -103,9 +103,9 @@ const EdubrainingHero = () => {
           </div>
 
           {/* Right Content - Visual Elements */}
-          <div className="w-full px-4 sm:px-8 lg:px-16 py-6">
+          <div className="w-full px-4 sm:px-8 lg:px-16 py-0">
   {/* Background Image Section */}
-  <div className="relative w-full h-60 sm:h-80 lg:h-96 rounded-3xl ">
+  <div className="relative w-full h-full sm:h-90 lg:h-96  ">
     <img
       src="header.png"
       alt="Background Visual"
@@ -115,7 +115,7 @@ const EdubrainingHero = () => {
 
   {/* Cart Widget - Below the Image */}
   <div className="mt-60 flex justify-end">
-    <div className="bg-[#1545C20D] backdrop-blur-sm border border-[#1750BF] rounded-xl p-3 sm:p-4 shadow-2xl w-fit">
+    <div className="bg-[slate-800/90] backdrop-blur-sm border border-[#1750BF] rounded-xl p-3 sm:p-4 shadow-2xl w-fit">
       <div className="flex items-center justify-between gap-4 sm:gap-6 lg:gap-8 min-w-36 sm:min-w-48">
         <div className="flex flex-col items-center">
           <div className="text-lg sm:text-2xl font-bold text-white">0</div>
