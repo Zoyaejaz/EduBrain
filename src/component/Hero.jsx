@@ -115,7 +115,7 @@ const EdubrainingHero = () => {
 
   {/* Cart Widget - Below the Image */}
   <div className="mt-60 flex justify-end">
-    <div className="bg-slate-800/90 backdrop-blur-sm border border-slate-600 rounded-xl p-3 sm:p-4 shadow-2xl w-fit">
+    <div className="bg-[#1545C20D] backdrop-blur-sm border border-[#1750BF] rounded-xl p-3 sm:p-4 shadow-2xl w-fit">
       <div className="flex items-center justify-between gap-4 sm:gap-6 lg:gap-8 min-w-36 sm:min-w-48">
         <div className="flex flex-col items-center">
           <div className="text-lg sm:text-2xl font-bold text-white">0</div>
@@ -125,7 +125,7 @@ const EdubrainingHero = () => {
           <div className="text-lg sm:text-2xl font-bold text-white">₹0</div>
           <div className="text-xs sm:text-sm text-gray-400">Total</div>
         </div>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg flex items-center gap-1 sm:gap-2 transition-colors duration-200">
+        <button className="bg-gradient-to-r from-[#72A0FF] via-[#246CFF] to-[#0054FF] text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg flex items-center gap-1 sm:gap-2 transition-colors duration-200">
           <ShoppingCart className="w-3 h-3 sm:w-4 sm:h-4" />
           <span className="text-xs sm:text-sm">Go to Cart</span>
         </button>

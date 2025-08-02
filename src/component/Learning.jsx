@@ -56,7 +56,6 @@ const LearningExperienceSection = () => {
         style={{
           maxWidth: '1100px',
           borderTop: '1px solid #1545C2',
-          borderBottom: '1px solid #1545C2',
           paddingTop: '2rem',
           paddingBottom: '2rem',
         }}
@@ -78,6 +77,14 @@ const LearningExperienceSection = () => {
             />
           ))}
         </div>
+
+        {/* Horizontal Border Line Before Women Entrepreneurs Section */}
+        <div
+          style={{
+            borderTop: '1px solid #1545C2',
+            marginBottom: '2rem'
+          }}
+        />
 
         {/* Women Entrepreneurs Section */}
         <div className="text-center">
